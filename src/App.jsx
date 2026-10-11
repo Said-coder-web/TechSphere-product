@@ -15,7 +15,7 @@ import Layout from "./components/layout"
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/TechSphere-product">
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />

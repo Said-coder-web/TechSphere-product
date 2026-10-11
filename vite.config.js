@@ -9,14 +9,8 @@ dns.setDefaultResultOrder('ipv4first')
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), babel({presets: [reactCompilerPreset()]})],
+  pase: '/TechSphere-product/',
   server: {
     port: 4000,
-    // proxy: {
-    //   '/api': {
-    //     target: 'https://api.mobileapi.dev',
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, ''),
-    //   },
-    // },
   },
 });
