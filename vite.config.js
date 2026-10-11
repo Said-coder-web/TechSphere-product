@@ -7,10 +7,10 @@ import dns from 'node:dns'
 dns.setDefaultResultOrder('ipv4first')
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({command}) => ({
   plugins: [react(), tailwindcss(), babel({presets: [reactCompilerPreset()]})],
-  pase: '/TechSphere-product/',
+  base: command === 'build' ? '/TechSphere-product/' : '/',
   server: {
     port: 4000,
   },
-});
+}));
