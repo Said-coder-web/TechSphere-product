@@ -1,0 +1,9 @@
+.not-found {
+  .image {
+    background: url(../../assets/bgPanner.jpg);
+    
+    h2 {
+      text-shadow: 0 0 10px white;
+    }
+  }
+}

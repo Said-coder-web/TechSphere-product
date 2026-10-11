@@ -1,0 +1,40 @@
+.nav-links {
+  li {
+    a {
+      position: relative;
+      transition: 0.3s;
+      color: #eee;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          to left,
+          rgba(238, 238, 238, 0.5),
+          white,
+          rgba(238, 238, 238, 0.5)
+        );
+        scale: 0;
+        transition: 0.3s;
+      }
+
+      &:hover {
+        text-shadow: 0 0 10px #eee;
+        color: white;
+      }
+
+      &.active {
+        text-shadow: 0 0 10px #eee;
+        color: white;
+
+        &::after {
+          scale: 1;
+        }
+      }
+    }
+  }
+}

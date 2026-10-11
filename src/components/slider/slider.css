@@ -1,0 +1,154 @@
+.loader {
+  height: 400px;
+}
+.swiper {
+  padding: 10px 30px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding-inline: 20px;
+    padding-block: 20px 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    cursor: grab;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .info-silder {
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .info {
+        h3 {
+          color: var(--borderColor);
+        }
+      }
+
+      .new,
+      button {
+        background: linear-gradient(
+          to left,
+          #66a3ff,
+          #3385ff,
+          #3385ff,
+          #3385ff,
+          #66a3ff
+        );
+      }
+
+      button {
+        border-radius: 50px;
+      }
+
+      ul {
+        li:not(:last-of-type) {
+          border-right: 1px solid #e5f0ff44;
+        }
+
+        svg {
+          background: #e5f0ff1a;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+.swiper-horizontal {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--itemColor);
+
+    svg {
+      width: 30px;
+      height: 15px;
+    }
+  }
+
+  .swiper-button-prev {
+    bottom: 30px;
+    right: 80px;
+    top: initial;
+    left: initial;
+  }
+
+  .swiper-button-next {
+    top: initial;
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .swiper-pagination {
+    right: 60px;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: fit-content;
+    bottom: initial;
+    left: initial;
+
+    @media (max-width: 768px) {
+        gap: 20px;
+      }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50% 0;
+      width: 2px;
+      height: 100%;
+      background: #eeeeee80;
+      z-index: -1;
+    }
+
+    .swiper-pagination-bullet {
+      background: transparent;
+      width: 12px;
+      height: 12px;
+      counter-increment: number;
+      position: relative;
+      transition: 0.3s;
+
+      &::before {
+        content: "0" counter(number);
+        position: absolute;
+        top: 50%;
+        right: -30px;
+        translate: 0 -50%;
+      }
+
+      &.swiper-pagination-bullet-active {
+        background: white;
+        box-shadow:
+          0 0 10px rgba(51, 133, 255, 0.75),
+          0 0 20px rgba(0, 123, 255, 0.75);
+
+        &::before {
+          text-shadow:
+            0 0 10px #3385ff,
+            0 0 20px #007aff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes navSlider {
+  to {
+    height: 100%;
+  }
+}

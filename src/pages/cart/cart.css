@@ -1,0 +1,6 @@
+.cart {
+  .order-summary {
+    position: sticky;
+    top: 90px;
+  }
+}

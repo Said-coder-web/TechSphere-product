@@ -1,0 +1,13 @@
+.titel {
+  button {
+    svg {
+      transition: 0.3s;
+    }
+
+    &:hover {
+      svg {
+        translate: 5px 0;
+      }
+    }
+  }
+}

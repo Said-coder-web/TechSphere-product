@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/*=== Start Glubal Roule ===*/
+:root {
+  --borderColor: white;
+  --itemColor: rgba(201, 224, 255, 0.25);
+  --textColor: #001433;
+  --blue: #3385ff;
+  --bgBlue: rgba(51, 133, 255, 0.25);
+  
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) black;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  color: white;
+  background:
+  /* linear-gradient(to bottom, #ffffff7a 0%, #ffffff8e 40%, rgba(255, 255, 255, 0) 100%), */ linear-gradient(
+    to right,
+    #0ed2da,
+    #5f29c7
+    );
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, #ccc 1px, transparent 1px);
+    background-size: 50px 100%;
+    pointer-events: none;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    z-index: -1;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+p {
+  opacity: 0.7;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+.bg-blur {
+  background: var(--itemColor);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  position: relative;
+  border-inline: 2px solid rgba(255, 255, 255, 0.322);
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    z-index: 100;
+  }
+  &::before {
+    top: 0;
+    background: linear-gradient(
+      to left,
+      transparent,
+      var(--borderColor),
+      transparent
+    );
+  }
+  &::after {
+    bottom: 0;
+    background: linear-gradient(
+      to left,
+      transparent,
+      transparent,
+      var(--borderColor),
+      transparent
+    );
+  }
+}
+
+button.bg-blur {
+  &::before,
+  &::after {
+    transition: 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      background-position: 30px;
+    }
+    &::after {
+      background-position: -30px;
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - 380px);
+}
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    width: 90%;
+  }
+  @media (min-width: 991px) {
+    width: 90%;
+  }
+  @media (min-width: 1200px) {
+    width: 85%;
+  }
+}
+/*=== End Glubal Roule ===*/

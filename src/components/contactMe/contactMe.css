@@ -1,0 +1,14 @@
+.contact-me {
+  .right {
+    @media (min-width: 992px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    button {
+      background: var(--blue);
+    }
+  }
+}
